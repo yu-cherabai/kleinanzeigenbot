@@ -1,5 +1,7 @@
 TG_TOKEN = '5211522472:AAHBlwJeOpgnHVl7xTyxFIPJokyxTyPlKA0'
 
+TELEGRAPH_TOKEN = 'd928957895b72192f7339ccb8ef07836aaf731dacfbd2a74b12c63a979fb'
+
 KLEINANZEIGEN_HOST = 'https://www.ebay-kleinanzeigen.de'
 
 DEFAULT_IMG = 'https://profimed.uz/wp-content/plugins/ninja-forms/assets/img/no-image-available-icon-6.jpg'

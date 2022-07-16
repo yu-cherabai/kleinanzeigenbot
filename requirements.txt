@@ -2,3 +2,4 @@ pyTelegramBotAPI==4.6.0
 APScheduler==3.9.1
 bs4==0.0.1
 lxml==4.9.1
+telegraph==2.1.0
