@@ -7,4 +7,4 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN pip install -r requirements.txt
 
-CMD [ "python", "./main.py" ]
+CMD [ "python3", "./main.py" ]
