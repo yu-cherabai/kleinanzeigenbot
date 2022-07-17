@@ -1,9 +1,0 @@
-version: "3"
-
-services:
-  libretranslate:
-    image: libretranslate/libretranslate:latest
-    restart: unless-stopped
-    ports:
-      - 8081:5000
-    command: --frontend-language-source en --frontend-language-target --load-only argostranslate --host 127.0.0.1
