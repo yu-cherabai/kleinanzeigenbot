@@ -99,7 +99,7 @@ class AddsParser:
     @staticmethod
     def __get_created_at(ad_main_top):
         try:
-            return ad_main_top.find('div', {'class': 'aditem-main--top--right'}).find('i', {'class': 'icon icon-small icon-calendar-open'}).next.strip()
+            return ad_main_top.find('div', {'class': 'aditem-main--top--right'}).find('i', {
+                'class': 'icon icon-small icon-calendar-open'}).next.strip()
         except Exception:
             return 'TOP'
-
