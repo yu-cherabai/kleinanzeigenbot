@@ -17,6 +17,8 @@ DIESEL_URL = 'https://www.ebay-kleinanzeigen.de/s-autos/volkswagen/wuppertal/pre
              '.anzahl_tueren_s:4_5+autos.ez_i:2008%2C2013+autos.fuel_s:diesel+autos.marke_s:volkswagen+autos.model_s' \
              ':golf+autos.shift_s:manuell'
 
+TRANSLATION_URL = 'https://libretranslate.de/translate'
+
 PROCESSING_URLS = [BENZ_URL, DIESEL_URL]
 
 TG_USER_IDS = ['549948876', '931738390']

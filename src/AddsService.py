@@ -45,9 +45,10 @@ class AddsService:
 
             add.attrs = attrs
 
-            add.configs = list(map(lambda c: c.replace(c, add_configurations.configurations_ru.get(c)), self.__parser.parse_configurations(soup)))
+            add.configs = list(map(lambda c: c.replace(c, add_configurations.configurations_ru.get(c)),
+                                   self.__parser.parse_configurations(soup)))
 
-            add.full_description = soup.find_all('p', {'class': 'text-force-linebreak'})[0].text.strip()
+            add.full_description = soup.find('p', {'class': 'text-force-linebreak'}).prettify()
 
             add.seller_name = self.__parser.parse_seller_name(soup)
 

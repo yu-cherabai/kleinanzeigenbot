@@ -39,7 +39,7 @@ class TelegramService:
         msg_body_list.append(f'Пробег:  {add.mileage}\n')
         if add.attrs.get('Мощность'):
             msg_body_list.append(f'Силы:      {add.attrs.get("Мощность")}\n')
-        if  add.attrs.get('Топливо'):
+        if add.attrs.get('Топливо'):
             msg_body_list.append(f'Топливо: {add.attrs.get("Топливо")}\n')
         msg_body_list.append(f'Город:      `{self.__normalize_location(add.location)}`\n')
 
@@ -62,4 +62,3 @@ class TelegramService:
     @staticmethod
     def __normalize_location(location) -> str:
         return re.sub('\((.*?)\)', "", re.sub('\d+', "", location))[1:]
-
