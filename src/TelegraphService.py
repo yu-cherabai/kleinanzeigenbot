@@ -28,7 +28,8 @@ class TelegraphService:
         body_html_list.append('<h4>Продавец:</h4>')
         body_html_list.append(f'<p>{add.seller_name}</p>')
         body_html_list.append('<h4>Описание:</h4>')
-        body_html_list.append(f'<p>{self.__translation_service.translate(add.full_description)}</p>')
+        desc = self.__translation_service.translate(add.full_description)
+        body_html_list.append(f'<p>{desc if desc else add.full_description}</p>')
         body_html_list.append(f'<a href="{add.url}">Перейти к обьявлению</a>')
         for img in add.images:
             body_html_list.append(f'<img src="{img}">\n')
