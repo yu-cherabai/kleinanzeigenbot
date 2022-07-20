@@ -90,6 +90,20 @@ class AddsParser:
             return None
 
     @staticmethod
+    def parse_full_location(soup):
+        try:
+            spans = soup.find_all('div', {'class': 'boxedarticle--details--full'})[0].find_all('span')
+            if len(spans) > 1:
+                first_part = spans[0].text.strip()
+                second_part = spans[1].text.strip()
+                return f'{first_part} {second_part}'
+            else:
+                return spans[0].text.strip()[6:]
+        except Exception as ex:
+            print(ex)
+            return None
+
+    @staticmethod
     def __get_img_url(article):
         try:
             return article.find('div', {'class': 'aditem-image'}).find('a').find('div').get('data-imgsrc').strip()

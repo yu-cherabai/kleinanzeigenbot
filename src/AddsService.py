@@ -50,6 +50,8 @@ class AddsService:
 
             add.full_description = soup.find('p', {'class': 'text-force-linebreak'}).prettify()
 
+            add.full_location = self.__parser.parse_full_location(soup)
+
             add.seller_name = self.__parser.parse_seller_name(soup)
 
             add.images = self.__parser.parse_images(soup)
