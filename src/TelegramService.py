@@ -18,7 +18,7 @@ class TelegramService:
     def send_add_msg(self, add: Model):
         for user_id in TG_USER_IDS:
             try:
-                page_url = self.__create_page(add)
+                page_url = None # self.__create_page(add)
                 photo = add.img_url if add.img_url else DEFAULT_IMG
                 if page_url:
                     markup = InlineKeyboardMarkup()
@@ -27,8 +27,10 @@ class TelegramService:
                     self.__bot.send_photo(chat_id=user_id, photo=photo, caption=self.__generate_msg_txt(add),
                                           reply_markup=markup)
                 else:
-                    msg_txt = f'{self.__generate_msg_txt(add)}\n[Перейти к обьявлению 🚀]({add.url})'
-                    self.__bot.send_photo(chat_id=user_id, photo=photo, caption=msg_txt)
+                    markup = InlineKeyboardMarkup()
+                    markup.add(InlineKeyboardButton('Обьявление', url=add.url))
+                    self.__bot.send_photo(chat_id=user_id, photo=photo, caption=self.__generate_msg_txt(add),
+                                          reply_markup=markup)
             except Exception as ex:
                 print(ex)
 
