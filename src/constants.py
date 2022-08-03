@@ -19,6 +19,6 @@ DIESEL_URL = 'https://www.ebay-kleinanzeigen.de/s-autos/volkswagen/velbert/preis
 
 TRANSLATION_URL = 'https://libretranslate.de/translate'
 
-PROCESSING_URLS = [BENZ_URL, DIESEL_URL]
+PROCESSING_URLS = [BENZ_URL]
 
 TG_USER_IDS = ['549948876', '931738390']
