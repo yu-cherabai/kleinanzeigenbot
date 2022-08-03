@@ -9,7 +9,7 @@ scheduler: BlockingScheduler = BlockingScheduler()
 processing_svc: ProcessingService = ProcessingService()
 
 
-@scheduler.scheduled_job(IntervalTrigger(seconds=20))
+@scheduler.scheduled_job(IntervalTrigger(seconds=10))
 def scheduled_task():
     print(datetime.now(timezone.utc).astimezone().isoformat())
     processing_svc.process()
